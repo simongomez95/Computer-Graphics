@@ -49,21 +49,19 @@ public class Lines extends JPanel {
                 } else {
                     code = end;
                 }
-                if ((code & cohenSutherland.UP) != 0) {           // point is above the clip rectangle
+                if ((code & cohenSutherland.UP) != 0) {
                     x = x0 + (x1 - x0) * (cohenSutherland.ymax - y0) / (y1 - y0);
                     y = cohenSutherland.ymax;
-                } else if ((code & cohenSutherland.DOWN) != 0) { // point is below the clip rectangle
+                } else if ((code & cohenSutherland.DOWN) != 0) {
                     x = x0 + (x1 - x0) * (cohenSutherland.ymin - y0) / (y1 - y0);
                     y = cohenSutherland.ymin;
-                } else if ((code & cohenSutherland.RIGHT) != 0) {  // point is to the right of clip rectangle
+                } else if ((code & cohenSutherland.RIGHT) != 0) {
                     y = y0 + (y1 - y0) * (cohenSutherland.xmax - x0) / (x1 - x0);
                     x = cohenSutherland.xmax;
-                } else if ((code & cohenSutherland.LEFT) != 0) {   // point is to the left of clip rectangle
+                } else if ((code & cohenSutherland.LEFT) != 0) {
                     y = y0 + (y1 - y0) * (cohenSutherland.xmin - x0) / (x1 - x0);
                     x = cohenSutherland.xmin;
                 }
-                // Now we move outside point to intersection point to clip
-                // and get ready for next pass.
                 if (code == origin) {
                     x0 = x;
                     y0 = y;
