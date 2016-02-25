@@ -9,20 +9,20 @@ package reto3b;
  *
  * @author lope
  */
-public class punto2Dh {
+public class Punto2Dh {
     
     private double x;
     private double y;
     private double w;
     
-    public punto2Dh(double x1, double y1){
+    public Punto2Dh(double x1, double y1){
         x = x1;
         y = y1;
         w = 1;
     }
     
-    public punto2Dh transf(matriz2D m1){
-        punto2Dh pR = this;
+    public Punto2Dh transf(Matriz2D m1){
+        Punto2Dh pR = this;
         double[][] m = m1.getMatriz();
         
         pR.setX(x*m[0][0] + y*m[0][1] + w*m[0][2]);

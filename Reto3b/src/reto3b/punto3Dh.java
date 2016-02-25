@@ -9,22 +9,22 @@ package reto3b;
  *
  * @author lope
  */
-public class punto3Dh {
+public class Punto3Dh {
     
     private double x;
     private double y;
     private double z;
     private double w;
     
-    public punto3Dh(double x1, double y1, double z1){
+    public Punto3Dh(double x1, double y1, double z1){
         x = x1;
         y = y1;
         z = z1;
         w = 1;
     }
     
-    public punto3Dh transf(matriz3D m1){
-        punto3Dh pR = this;
+    public Punto3Dh transf(Matriz3D m1){
+        Punto3Dh pR = this;
         double[][] m = m1.getMatriz();
         
         pR.setX(x*m[0][0] + y*m[0][1] + z*m[0][2] + w*m[0][3]);

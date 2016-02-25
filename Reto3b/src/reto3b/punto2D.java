@@ -9,12 +9,12 @@ package reto3b;
  *
  * @author lope
  */
-public class punto2D {
+public class Punto2D {
     
     private double x;
     private double y;
     
-    public punto2D(double x1, double y1){
+    public Punto2D(double x1, double y1){
         x = x1;
         y = y1;
     }

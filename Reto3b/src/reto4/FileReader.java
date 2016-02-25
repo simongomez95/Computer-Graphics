@@ -1,6 +1,6 @@
 package reto4;
 
-import reto3b.punto2Dh;
+import reto3b.Punto2Dh;
 
 import java.io.*;
 import java.util.List;
@@ -10,14 +10,17 @@ import java.util.List;
  */
 public class FileReader {
 
-    String fileName = "objeto.txt";
-    String line = null;
+    private static String fileName = "objeto.txt";
+    private String line = null;
 
-    File file;
+    private File file;
 
-    FileInputStream fis;
+    private FileInputStream fis;
 
-    BufferedReader br;
+    private BufferedReader br;
+
+    private List<int[]> listaAristas = null;
+    private List<Punto2Dh> listaPuntos = null;
 
     public FileReader () {
 
@@ -29,26 +32,49 @@ public class FileReader {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+        leerObjeto();
 
 
     }
 
-    public void leerObjeto() {
+    private void leerObjeto() {
 
         int numeroPuntos = 0;
+
         try {
             numeroPuntos = Integer.parseInt(br.readLine());
-            List<punto2Dh> listaPuntos = null;
             for (int i = 0; i < numeroPuntos; i++) {
                 String[] punto = br.readLine().split(" ");
-                listaPuntos.add(new punto2Dh(Double.parseDouble(punto[0]), Double.parseDouble(punto[1])));
+                listaPuntos.add(new Punto2Dh(Double.parseDouble(punto[0]), Double.parseDouble(punto[1])));
 
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        int numeroAristas = 0;
+        try {
+            numeroAristas = Integer.parseInt(br.readLine());
+
+            for (int j=0; j < numeroAristas; j++) {
+                int[] arista = null;
+                String[] aristaStr = br.readLine().split(" ");
+                arista[0] = Integer.parseInt(aristaStr[0]);
+                arista [1] = Integer.parseInt(aristaStr[1]);
+                listaAristas.add(arista);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
 
 
+    }
+
+    public List<Punto2Dh> getPuntos() {
+        return listaPuntos;
+    }
+
+    public List<int[]> getAristas() {
+        return listaAristas;
     }
 
 }

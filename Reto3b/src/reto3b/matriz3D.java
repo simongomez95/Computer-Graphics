@@ -9,11 +9,11 @@ package reto3b;
  *
  * @author lope
  */
-public class matriz3D {
+public class Matriz3D {
     
     private double[][] matriz;
     
-    public matriz3D(){
+    public Matriz3D(){
         matriz = new double[4][4];
         matriz[0][0] = 2;
         matriz[0][1] = 2;
@@ -33,7 +33,7 @@ public class matriz3D {
         matriz[3][2] = 1;
     }
     
-    public double[][] mult(matriz3D m1){
+    public double[][] mult(Matriz3D m1){
         double[][]m = m1.getMatriz();
         double[][]mR = new double[4][4];
         

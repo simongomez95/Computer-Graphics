@@ -3,22 +3,22 @@ package reto3b;
 /**
  * Created by simon on 21/02/2016.
  */
-public class test_main {
+public class Test_main {
 
     public void test() {
-        punto2Dh p2d1 = new punto2Dh(100, 100);
-        punto2Dh p2d2 = new punto2Dh(200, 200);
+        Punto2Dh p2d1 = new Punto2Dh(100, 100);
+        Punto2Dh p2d2 = new Punto2Dh(200, 200);
 
-        punto3Dh p3d1 = new punto3Dh(100, 100, 0);
-        punto3Dh p3d2 = new punto3Dh(200, 200, 10);
+        Punto3Dh p3d1 = new Punto3Dh(100, 100, 0);
+        Punto3Dh p3d2 = new Punto3Dh(200, 200, 10);
 
-        matriz2D m2d = new matriz2D();
-        matriz3D m3d = new matriz3D();
+        Matriz2D m2d = new Matriz2D();
+        Matriz3D m3d = new Matriz3D();
 
-        vector3D v3d1 = new vector3D(new punto3D(100, 100, 0), new punto3D(200, 200, 10));
-        vector3D v3d2 = new vector3D(new punto3D(300, 300, 0), new punto3D(400, 400, 10));
-        vector2D v2d1 = new vector2D(new punto2D(100, 100), new punto2D(200, 200));
-        vector2D v2d2 = new vector2D(new punto2D(300, 300), new punto2D(400, 400));
+        Vector3D v3d1 = new Vector3D(new Punto3D(100, 100, 0), new Punto3D(200, 200, 10));
+        Vector3D v3d2 = new Vector3D(new Punto3D(300, 300, 0), new Punto3D(400, 400, 10));
+        Vector2D v2d1 = new Vector2D(new Punto2D(100, 100), new Punto2D(200, 200));
+        Vector2D v2d2 = new Vector2D(new Punto2D(300, 300), new Punto2D(400, 400));
 
 
         System.out.println("Transf. p2d1 * m2d: x:" + p2d1.transf(m2d).getX() + " y: " + p2d1.transf(m2d).getY());

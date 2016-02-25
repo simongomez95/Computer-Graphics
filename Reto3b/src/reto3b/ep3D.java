@@ -9,7 +9,7 @@ package reto3b;
  *
  * @author lope
  */
-public class ep3D {
+public class Ep3D {
     
     private double x0;
     private double y0;
@@ -19,7 +19,7 @@ public class ep3D {
     private double c;
     private double t;
     
-    public ep3D(double x1, double y1, double z1, double x2, double y2, double z2){
+    public Ep3D(double x1, double y1, double z1, double x2, double y2, double z2){
         x0 = x1;
         y0 = y1;
         z0 = z1;

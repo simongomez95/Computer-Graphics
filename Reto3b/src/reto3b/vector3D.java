@@ -9,20 +9,20 @@ package reto3b;
  *
  * @author lope
  */
-public class vector3D {
+public class Vector3D {
     
     private double x;
     private double y;
     private double z;
     
-    public vector3D(punto3D p1, punto3D p2){
+    public Vector3D(Punto3D p1, Punto3D p2){
         x = p2.getX() - p1.getX();
         y = p2.getY() - p1.getY();
         z = p2.getZ() - p1.getZ();
     }
     
-    public vector3D multEsc(double e){
-        vector3D vR = this;
+    public Vector3D multEsc(double e){
+        Vector3D vR = this;
         
         vR.setX(this.x*e);
         vR.setY(this.y*e);
@@ -31,8 +31,8 @@ public class vector3D {
         return vR;
     }
     
-    public vector3D suma(vector3D v1){
-        vector3D vR = v1;
+    public Vector3D suma(Vector3D v1){
+        Vector3D vR = v1;
         
         vR.setX(this.x + v1.getX());
         vR.setY(this.y + v1.getY());
@@ -41,8 +41,8 @@ public class vector3D {
         return vR;
     }
     
-    public vector3D cruz(vector3D v1){
-        vector3D vR = v1;
+    public Vector3D cruz(Vector3D v1){
+        Vector3D vR = v1;
         
         vR.setX(this.y*v1.getZ()-this.z*v1.getY());
         vR.setY(-1*(this.x*v1.getZ()-this.z*v1.getX()));
@@ -51,7 +51,7 @@ public class vector3D {
         return vR;
     }
     
-    public double punto(vector3D v1){
+    public double punto(Vector3D v1){
         return (this.x*v1.getX() + this.y*v1.getY() + this.z*v1.getZ());
     }
 

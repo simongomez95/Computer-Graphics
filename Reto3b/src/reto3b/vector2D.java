@@ -9,18 +9,18 @@ package reto3b;
  *
  * @author lope
  */
-public class vector2D {
+public class Vector2D {
 
     private double x;
     private double y;
     
-    public vector2D(punto2D p1, punto2D p2){
+    public Vector2D(Punto2D p1, Punto2D p2){
         x = p2.getX() - p1.getX();
         y = p2.getY() - p1.getY();
     }
     
-    public vector2D suma(vector2D v1){
-        vector2D vR = v1;
+    public Vector2D suma(Vector2D v1){
+        Vector2D vR = v1;
         
         vR.setX(this.x + v1.getX());
         vR.setY(this.y + v1.getY());
@@ -28,8 +28,8 @@ public class vector2D {
         return vR;
     }
     
-    public vector2D multEsc(double e){
-        vector2D vR = this;
+    public Vector2D multEsc(double e){
+        Vector2D vR = this;
         
         vR.setX(this.x*e);
         vR.setY(this.y*e);
@@ -37,7 +37,7 @@ public class vector2D {
         return vR;
     }
     
-    public double punto(vector2D v1){
+    public double punto(Vector2D v1){
         return (this.x*v1.getX() + this.y*v1.getY());
     }
 
