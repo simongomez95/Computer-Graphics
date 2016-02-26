@@ -36,12 +36,26 @@ public class ObjectDraw {
         List<Punto2Dh> puntos = fr.getPuntos();
         List<int[]> aristas = fr.getAristas();
 
-        for(int i=0; i < aristas.size(); i++) {
-            int x0 = (int) puntos.get(aristas.get(i)[0]).getX();
-            int y0 = (int) puntos.get(aristas.get(i)[0]).getY();
-            int x1 = (int) puntos.get(aristas.get(i)[1]).getX();
-            int y1 = (int) puntos.get(aristas.get(i)[1]).getY();
-            bresenham(x0, y0, x1, y1, g2d);
+        int x0;
+        int y0;
+        int x1;
+        int y1;
+
+//        for(int i=0; i < aristas.size(); i++) {
+//            x0 = (int) puntos.get(aristas.get(i)[0]).getX();
+//            y0 = (int) puntos.get(aristas.get(i)[0]).getY();
+//            x1 = (int) puntos.get(aristas.get(i)[1]).getX();
+//            y1 = (int) puntos.get(aristas.get(i)[1]).getY();
+//            bresenham(x0, y0, x1, y1, g2d);
+//        }
+        for (int[] arista : aristas) {
+            x0 = (int) puntos.get(arista[0]).getX();
+            y0 = (int) puntos.get(arista[0]).getY();
+            x1 = (int) puntos.get(arista[1]).getX();
+            y1 = (int) puntos.get(arista[1]).getY();
+            //bresenham(x0, y0, x1, y1, g2d);
+            g2d.drawLine(x0, y0, x1, y1);
         }
+
     }
 }

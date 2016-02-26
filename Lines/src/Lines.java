@@ -115,9 +115,9 @@ public class Lines extends JPanel {
         int radio=100;
         g2d.setColor(Color.GREEN);
 
-        //tangentes(g2d, w, h, radio);
+        tangentes(g2d, w, h, radio);
 
-        diezMilLineas(g2d, w, h);
+        //diezMilLineas(g2d, w, h);
 
         //bresenham(600, 600, 800, 800, g2d);
        // clipping(600, 600, 800, 800, g2d);
