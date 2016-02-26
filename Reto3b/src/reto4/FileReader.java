@@ -41,7 +41,7 @@ public class FileReader {
     private void leerObjeto() {
 
         int numeroPuntos = 0;
-        int[] arista = new int[2];
+
         String[] aristaStr = null;
         String[] punto = null;
 
@@ -62,6 +62,7 @@ public class FileReader {
             for (int j=0; j < numeroAristas; j++) {
 
                 aristaStr = br.readLine().split(" ");
+                int[] arista = new int[2];
                 arista[0] = Integer.parseInt(aristaStr[0]);
                 arista [1] = Integer.parseInt(aristaStr[1]);
                 listaAristas.add(arista);
