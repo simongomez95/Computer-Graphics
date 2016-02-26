@@ -17,6 +17,8 @@ import java.awt.*;
  */
 public class Reto3b extends JPanel {
 
+    static FileReader fr;
+    static ObjectDraw draw;
 
 
     @Override
@@ -31,7 +33,7 @@ public class Reto3b extends JPanel {
 
 
 
-        draw.dibujarObjeto();
+        draw.dibujarObjeto(g2d);
 
 
     }
@@ -40,11 +42,10 @@ public class Reto3b extends JPanel {
      */
     public static void main(String[] args) {
 
-
-        FileReader fr = new FileReader();
-        ObjectDraw draw = new ObjectDraw(fr, g2d);
+        fr = new FileReader();
+        draw = new ObjectDraw(fr);
         // Crear un nuevo Frame
-        JFrame frame = new JFrame("Lines");
+        JFrame frame = new JFrame("Graphics");
         // Al cerrar el frame, termina la ejecución de este programa
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // Agregar un JPanel que se llama Points (esta clase)
@@ -56,8 +57,8 @@ public class Reto3b extends JPanel {
         // Mostrar el frame
         frame.setVisible(true);
 
-        Test_main test = new Test_main();
-        test.test();
+        //Test_main test = new Test_main();
+        //test.test();
     }
     
 }

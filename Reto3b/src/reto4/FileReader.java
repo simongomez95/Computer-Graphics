@@ -3,6 +3,7 @@ package reto4;
 import reto3b.Punto2Dh;
 
 import java.io.*;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -19,8 +20,8 @@ public class FileReader {
 
     private BufferedReader br;
 
-    private List<int[]> listaAristas = null;
-    private List<Punto2Dh> listaPuntos = null;
+    private List<int[]> listaAristas = new LinkedList<int[]>();
+    private List<Punto2Dh> listaPuntos = new LinkedList<Punto2Dh>();
 
     public FileReader () {
 
@@ -40,11 +41,14 @@ public class FileReader {
     private void leerObjeto() {
 
         int numeroPuntos = 0;
+        int[] arista = new int[2];
+        String[] aristaStr = null;
+        String[] punto = null;
 
         try {
             numeroPuntos = Integer.parseInt(br.readLine());
             for (int i = 0; i < numeroPuntos; i++) {
-                String[] punto = br.readLine().split(" ");
+                punto = br.readLine().split(" ");
                 listaPuntos.add(new Punto2Dh(Double.parseDouble(punto[0]), Double.parseDouble(punto[1])));
 
             }
@@ -56,8 +60,8 @@ public class FileReader {
             numeroAristas = Integer.parseInt(br.readLine());
 
             for (int j=0; j < numeroAristas; j++) {
-                int[] arista = null;
-                String[] aristaStr = br.readLine().split(" ");
+
+                aristaStr = br.readLine().split(" ");
                 arista[0] = Integer.parseInt(aristaStr[0]);
                 arista [1] = Integer.parseInt(aristaStr[1]);
                 listaAristas.add(arista);
